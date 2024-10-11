@@ -1,7 +1,14 @@
 ## corpy: text corpus w/ Python
+
 This project is to have data available about the words and documents that make up a corpus.
-in the doc corpy.py is where the work goin on, #the doc main shows the most important part of the project
-what is the Data and Data2 funcionts, this functions make a dictionary with the data of words in each doc,
-the number of times wath this exist in each document and a globally way, and the size of every doc and corpus.
-The examples doc is about other basics functions for a project like this, like getters and settels and how
-this affect propertys like the vocabulary.
+In the doc corpy.py is where the work going on. 
+Corpy is a class that requires a list of strings as input. It has two property bases:
+* corpus (self.__corpus)
+* vocabulary (seld.__vocabulary)
+And their respective getters and setters.
+The relevant part of the project is about got data from the corpus, the functions or property's that are in charge of that are:
+- **Data** 
+  - *Data function got data about the vocabulary, in form of a dictionary of dictionary's where every word in the vocabulary is the main indice and have heir own dictionary, that dictionary contains the count for that word in every document in the corpus and in many documents appear. the indice for every document is 'doc0' where 0 is the representation of the number of ocument and 'exist in' is the indice for in how many documents appear.*
+- **Data2**
+  - *Data2 is a more simple function, this function count's how many words contains every document and the total. its a dictionary too, where 'doc0' is the main indice for every document and 'all' is for the total. and every second indice is 'total'.* 
+The result of these two funcions looks similar that a json document.
