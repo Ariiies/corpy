@@ -5,6 +5,7 @@ In the doc corpy.py is where the work going on.
 Corpy is a class that requires a list of strings as input. It has two property bases:
 * corpus (self.__corpus)
 * vocabulary (seld.__vocabulary)
+
 And their respective getters and setters.
 The relevant part of the project is about got data from the corpus, the functions or property's that are in charge of that are:
 - **Data** 
