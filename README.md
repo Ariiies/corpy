@@ -11,4 +11,5 @@ The relevant part of the project is about got data from the corpus, the function
   - *Data function got data about the vocabulary, in form of a dictionary of dictionary's where every word in the vocabulary is the main indice and have heir own dictionary, that dictionary contains the count for that word in every document in the corpus and in many documents appear. the indice for every document is 'doc0' where 0 is the representation of the number of ocument and 'exist in' is the indice for in how many documents appear.*
 - **Data2**
   - *Data2 is a more simple function, this function count's how many words contains every document and the total. its a dictionary too, where 'doc0' is the main indice for every document and 'all' is for the total. and every second indice is 'total'.* 
+
 The result of these two funcions looks similar that a json document.
