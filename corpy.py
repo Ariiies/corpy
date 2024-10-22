@@ -37,7 +37,6 @@ class Corpy:                  # Iniciliza el objeto con una lista de Strings
             word_data['total'] = total
             word_data['exist in'] = count_doc
             data[word] = word_data
-            
         return data
    
     # Anothes function for the general data in the docs 
