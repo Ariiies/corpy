@@ -98,7 +98,7 @@ class Corpy:
         """
         num_docs = len(self.__corpus)
         vocab_size = len(self.__vocabulary)
-        total_words = self.doc_stats["all"]["total"]
+        total_words = self.doc_data["all"]["total"]
         avg_words_per_doc = total_words / num_docs if num_docs else 0
 
         return {
