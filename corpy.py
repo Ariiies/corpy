@@ -89,3 +89,34 @@ class Corpy:
             data[f"doc{i}"] = {"total": word_count}
         data["all"] = {"total": total}
         return data
+
+    def summary(self) -> dict:
+        """Return a summary of the corpus and basic statistics.
+        Returns:
+            dict: Contains number of documents, vocabulary size, total words,
+                and average words per document.
+        """
+        num_docs = len(self.__corpus)
+        vocab_size = len(self.__vocabulary)
+        total_words = self.doc_stats["all"]["total"]
+        avg_words_per_doc = total_words / num_docs if num_docs else 0
+
+        return {
+            "documents": num_docs,
+            "vocabulary_size": vocab_size,
+            "total_words": total_words,
+            "average_words_per_document": round(avg_words_per_doc, 2)
+        }
+
+    def __str__(self) -> str:
+        """Return a readable string summary of the Corpy object."""
+        stats = self.summary()
+        return (
+            f"<Corpy Analyzer>\n"
+            f"- Documents: {stats['documents']}\n"
+            f"- Vocabulary Size: {stats['vocabulary_size']} unique words\n"
+            f"- Total Words: {stats['total_words']}\n"
+            f"- Avg. Words per Document: {stats['average_words_per_document']:.2f}"
+        )
+
+    __repr__ = __str__
