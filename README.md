@@ -1,17 +1,75 @@
-## corpy: text corpus w/ Python
+# 📚 Corpy - Text Corpus Analyzer
 
-This project is to have data available about the words and documents that make up a corpus.
-In the doc corpy.py is where the work going on. 
-Corpy is a class that requires a list of strings as input. It has two property bases:
-- **corpus (self.__corpus)**
-- **vocabulary (seld.__vocabulary)**
+![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-And their respective *getters* and *setters*.
-The relevant part of the project is about got data from the corpus, the functions or property's that are in charge of that are:
-- **data** 
-  - *data function got data about the vocabulary, in form of a dictionary of dictionary's where every word in the vocabulary is the main indice and have heir own dictionary, that dictionary contains the count for that word in every document in the corpus and in many documents appear. the indice for every document is 'doc0' where 0 is the representation of the number of ocument (in the results never is 0), 'total' is the indice of how many times the word appear in all the documents  and 'doc_freq' is the indice for in how many documents appear.*
-- **doc_data**
-  - *doc_data is a more simple function, this function count's how many words contains every document and the total. its a dictionary too, where 'doc0' is the main indice for every document and 'all' is for the total. and every second indice is 'total'.* 
-- **summary**
-  -*the summary function is a resume to the object creates with corpy.*
-The result of these trhee funcions looks similar that a json document.
+**Corpy** is a minimalist Python library for quantitative analysis of text corpora.  
+Designed for efficient processing of document collections, it provides essential metrics about vocabulary and word distribution.
+
+## ✨ Features
+
+- Automatic vocabulary extraction  
+- Lexical frequency statistics  
+- Per-document and global metrics  
+- Intuitive interface using property getters  
+- Clear and structured output  
+- Efficient implementation using pure Python
+
+## 🔍 Access to Key Metrics
+
+### ▸ `.vocabulary`
+**Unique Vocabulary**  
+Alphabetically sorted list of all distinct words in the corpus.
+
+### ▸ `.data`
+**Lexical Frequencies**  
+Dictionary containing:
+- ✓ Word count per document (`doc1`, `doc2`, ...)
+- ✓ Total word occurrences
+- ✓ Document frequency (how many documents contain the word)
+
+### ▸ `.doc_data`
+**Document Statistics**  
+Includes:
+- ✓ Word count per document
+- ✓ Total number of words across the corpus
+
+### ▸ `.summary()`
+**Global Overview**  
+Summary including:
+- ✓ Number of documents
+- ✓ Vocabulary size
+- ✓ Average words per document
+
+---
+
+## 📖 Usage & Documentation
+
+Looking to get started?  
+Check out the [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md) for installation instructions, examples, and full API reference.
+
+> ℹ️ Replace the URL with your actual documentation link when available.
+
+---
+
+## 📊 Main Metrics Table
+
+| Method/Property  | Description                                  | Output Type              |
+|------------------|----------------------------------------------|--------------------------|
+| `vocabulary`     | Ordered list of unique words                 | `list[str]`              |
+| `data`           | Detailed word-level statistics               | `dict[str, dict]`        |
+| `doc_data`       | Word counts per document                     | `dict[str, dict]`        |
+| `summary()`      | Aggregated metrics for the corpus            | `dict[str, int/float]`   |
+
+---
+
+## 🖥 Technical Requirements
+
+- **Python 3.7+**
+- **Zero-dependencies** – Implemented in pure Python
+- **Cross-platform** – Compatible with Windows, Linux, and macOS
+
+---
+
+## 📜 License
+MIT © Luis Aries Meza Castillo – A tool for computational linguistic analysis
