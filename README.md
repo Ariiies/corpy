@@ -48,8 +48,6 @@ Summary including:
 Looking to get started?  
 Check out the [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md) for installation instructions, examples, and full API reference.
 
-> ℹ️ Replace the URL with your actual documentation link when available.
-
 ---
 
 ## 📊 Main Metrics Table
