@@ -4,12 +4,9 @@ class Corpy:
     Supports vocabulary extraction, frequency analysis, and document-level metrics.
     """
     def __init__(self, corpus: list):
-        """Initialize the corpus analyzer with a list of text documents.
-        Args:
-            corpus (list): List of strings where each string represents a document.
-                           Automatically generates the vocabulary from the corpus.
-        """
-        self.__corpus = corpus
+        """Initialize with documents (list[str]). Auto-creates vocabulary."""
+        self.__corpus = corpus  
+        # Generate vocabulary from the corpus
         self.__vocabulary = sorted(set(' '.join(self.__corpus).split()))
 
     # Vocabulary properties
@@ -23,7 +20,7 @@ class Corpy:
         Note: This will not update automatically based on the corpus anymore.
         """
         self.__vocabulary = vocabulary
-
+        
     # Corpus properties
     @property
     def corpus(self) -> list:
@@ -34,27 +31,18 @@ class Corpy:
         """Replace the current corpus and automatically regenerate the vocabulary."""
         self.__corpus = corpus
         self.__vocabulary = sorted(set(' '.join(self.__corpus).split()))
-
     # Analysis methods
     @property
     def data(self) -> dict:
-        """Generate word-level statistics across all documents.
-        Returns:
-            dict: A dictionary where each key is a word, and the value is another
-            dictionary containing:
-                - Word count per document ("docN")
-                - Total count across all documents ("total")
-                - Number of documents the word appears in ("doc_freq")
-        Example:
-            {
+        """Returns word statistics: counts per doc, total count, and doc frequency.
+            Format:  {
                 "example": {
                     "doc1": 2,
                     "doc2": 0,
                     "total": 2,
                     "doc_freq": 1
-                }
-            }
-        """
+                    },  
+                    }   """
         data = {}
         for word in self.__vocabulary:
             word_data, total, count_doc = {}, 0, 0
@@ -71,17 +59,13 @@ class Corpy:
 
     @property
     def doc_data(self) -> dict:
-        """Generate document-level word count statistics.
-        Returns:
-            dict: A dictionary with word counts per document and the total count
-            across all documents.
-        Example:
-            {
-                "doc1": {"total": 123},
-                "doc2": {"total": 456},
-                "all": {"total": 579}
-            }
-        """
+        """Returns word counts per document and total. 
+        Format: {
+                "doc1": {"total": 100},
+                "doc2": {"total": 250},
+                "all": {"total": 350}
+                }"""
+       
         data, total = {}, 0
         for i, text in enumerate(self.__corpus, start=1):
             word_count = len(text.split())
@@ -91,21 +75,12 @@ class Corpy:
         return data
 
     def summary(self) -> dict:
-        """Return a summary of the corpus and basic statistics.
-        Returns:
-            dict: Contains number of documents, vocabulary size, total words,
-                and average words per document.
-        """
-        num_docs = len(self.__corpus)
-        vocab_size = len(self.__vocabulary)
-        total_words = self.doc_data["all"]["total"]
-        avg_words_per_doc = total_words / num_docs if num_docs else 0
-
+        """Returns corpus stats: num docs, vocab size, total words, avg words/doc"""
         return {
-            "documents": num_docs,
-            "vocabulary_size": vocab_size,
-            "total_words": total_words,
-            "average_words_per_document": round(avg_words_per_doc, 2)
+            "documents": len(self.__corpus),
+            "vocabulary_size": len(self.__vocabulary),
+            "total_words": self.doc_data["all"]["total"],
+            "average_words_per_document": round(self.doc_data["all"]["total"] / len(self.__corpus) if len(self.__corpus) else 0, 2)
         }
 
     def __str__(self) -> str:
