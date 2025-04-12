@@ -189,25 +189,25 @@ Corpy can be used as a tool to develop other text analysis applications by facil
 
 The class looks like this:
 ```python
+import numpy as np
 from math import log
 
-class TFIDF:
+class TF_IDF:
     def __init__(self, corpus: 'Corpy'):
-        # TF (Normalized frequency)
-        self.tf = [
+        # Convertir a arrays de NumPy
+        self.tf = np.array([
             [corpus.data[word][f'doc{i+1}'] / len(corpus.corpus[i].split()) 
              for word in corpus.vocabulary] 
             for i in range(len(corpus.corpus))
-        ]
+        ])
         
-        # IDF (Inverse document frequency)
-        self.idf = [
+        self.idf = np.array([
             log(len(corpus.corpus) / (1 + corpus.data[word]['doc_freq'])) 
             for word in corpus.vocabulary
-        ]
+        ])
         
-        # TF-IDF
-        self.matrix = self.tf * self.idf
+        # Multiplicación elemento por elemento
+        self.matrix = self.tf * self.idf  # Broadcasting automático
 ```
 In simple terms, what TF-IDF does is:
 It measures whether a word is important (rare globally but frequent in a specific document).
@@ -414,6 +414,7 @@ Positive words: ['love', 'best', 'good']
 Negative words: ['hate', 'worst', 'dislike']
 Per document scores: [0.4875, -0.10769230769230768, 0.036363636363636355]
 ```
+⚠️ *Note: To view a better project of sentiments analyzer, check the [**Sentiment Analyzer with Python**](https://github.com/Ariiies/SentimentAnalyzer).*
 ---
 ## 🎯 Executive Summary
 Corpy is a lightweight Python text analysis toolkit that enables:
