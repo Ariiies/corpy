@@ -128,6 +128,8 @@ Output:
 </span> 
 
 - [<span style="font-size:1em; font-weight:600">Project README.</span> ](https://github.com/Ariiies/corpy/blob/main/README.md)
+- [<span style="font-size:1em; font-weight:600">Showcases and more reference.</span> ](https://github.com/Ariiies/corpy/blob/main/docs/showcase.md)
+
 - <span style="font-size:1em; font-weight:600">Full Api Reference.</span> (coming soon)
 ---
 <span style="font-size:1.5em; font-weight:600">✅ Requirements</span>

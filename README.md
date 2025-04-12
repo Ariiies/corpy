@@ -48,6 +48,8 @@ Summary including:
 Looking to get started?  
 Check out the [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md) for installation instructions, examples, and full API reference.
 
+To learn more about Corpy, check  [<span style="font-size:1em; font-weight:600">Showcases and more reference.</span> ](https://github.com/Ariiies/corpy/blob/main/docs/showcase.md)
+
 ---
 
 ## 📊 Main Metrics Table
