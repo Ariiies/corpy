@@ -11,7 +11,7 @@ Corpy is implemented in pure Python and requires no external dependencies.
 You can clone the repository directly:
 
 ```bash
-git clone https://github.com/your-username/corpy.git
+git clone https://github.com/Ariiies/corpy.git
 cd corpy
 ```
 ---
@@ -48,7 +48,7 @@ Output:
 <span style="font-size:1.2em; font-weight:600">📊 Word-level statistics (.data)</span> 
 ```python
 print("--- Data of some words ---")
-print("The word 'pokemon' appears in", corpy.data['pokemon']['exist in'], "documents")
+print("The word 'pokemon' appears in", corpy.data['pokemon']['doc_freq'], "documents")
 print("The word 'mega' appears in doc3", corpy.data['mega']['doc3'], "times")
 print("All stats about 'gengar':", corpy.data['gengar'])
 ```
@@ -57,7 +57,7 @@ Output:
 --- Data of some words ---
 The word 'pokemon' appears in 3 documents
 The word 'mega' appears in doc3 2 times
-All stats about 'gengar': {'doc1': 1, 'doc2': 0, 'doc3': 1, 'total': 2, 'exist in': 2}
+All stats about 'gengar': {'doc1': 1, 'doc2': 0, 'doc3': 1, 'total': 2, 'doc_freq': 2}
 ```
 See all data
 ```python
