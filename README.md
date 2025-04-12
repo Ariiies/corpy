@@ -6,6 +6,34 @@
 **Corpy** is a minimalist Python library for quantitative analysis of text corpora.  
 Designed for efficient processing of document collections, it provides essential metrics about vocabulary and word distribution.
 
+## 📖 Simple usage example
+**Import and create a Corpy object** using a list of strings as an input parameter for the Corpy class
+```python
+from corpy import Corpy
+
+corpus = [
+    "gengar is my favorite pokemon",
+    "i like the ghost type pokemon",
+    "mega gengar is the best mega evolution in pokemon"
+]
+
+corpy = Corpy(corpus)
+```
+Now, show some things about the corpus.
+```python
+print("--- Data of some words ---")
+print("The word 'pokemon' appears in", corpy.data['pokemon']['doc_freq'], "documents")
+print("The word 'mega' appears in doc3", corpy.data['mega']['doc3'], "times")
+print("All stats about 'gengar':", corpy.data['gengar'])
+```
+Output:
+```python
+--- Data of some words ---
+The word 'pokemon' appears in 3 documents
+The word 'mega' appears in doc3 2 times
+All stats about 'gengar': {'doc1': 1, 'doc2': 0, 'doc3': 1, 'total': 2, 'doc_freq': 2}
+```
+⚠️ *Note: Example taken from [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md).*
 ## ✨ Features
 
 - Automatic vocabulary extraction  
