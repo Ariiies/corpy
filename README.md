@@ -11,6 +11,20 @@
 **Corpy** is a minimalist Python library for quantitative analysis of text corpora.  
 Designed for efficient processing of document collections, it provides essential metrics about vocabulary and word distribution.
 
+## 🎯 Purpose
+
+The true value of **Corpy** lies in its simplicity and complete independence. It is an elegant, lightweight, and educational piece of code that demonstrates how text analysis can be performed using pure Python, without relying on external libraries. Corpy is like a Swiss Army knife: lightweight, portable, and perfect for quick scripts, restricted environments, or teaching basic text processing concepts. You can take it anywhere without hassle.
+
+### 🚫 Restricted Environments: One of Its Greatest Strengths
+
+Corpy truly shines in scenarios where installing external dependencies is not possible or not desirable, such as:
+
+- **Serverless Functions (AWS Lambda, Google Cloud Functions):** Keeping the deployment package small and free of complex dependencies reduces costs and startup times.
+- **Embedded Systems or IoT:** Ideal for devices with very limited resources (memory, storage), where installing large libraries is not feasible.
+- **Secure or Corporate IT Environments:** Perfect for settings where installing third-party packages is restricted or prohibited by security policies.
+
+Corpy is the ideal tool for those seeking efficiency, portability, and clarity in text analysis.
+
 ## 📖 Simple usage example
 **Import and create a Corpy object** using a list of strings as an input parameter for the Corpy class
 ```python
