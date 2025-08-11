@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="corpy-banner.png" alt="Corpy Banner" style="max-width:100%; height:auto;"/>
+  <img src="docs/img/corpy-banner.png" alt="Corpy Banner" style="max-width:100%; height:auto;"/>
 </p>
 
 # 📚 Corpy - Text Corpus Analyzer
@@ -52,7 +52,27 @@ The word 'pokemon' appears in 3 documents
 The word 'mega' appears in doc3 2 times
 All stats about 'gengar': {'doc1': 1, 'doc2': 0, 'doc3': 1, 'total': 2, 'doc_freq': 2}
 ```
+
+
 ⚠️ *Note: Example taken from [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md).*
+
+## 📖 Integration with Pandas
+Para una mejor visualizacion de los datos, la integracion con pandas es muy sencilla:
+```python
+import pandas as pd
+
+df = pd.DataFrame.from_dict(corpy.data, orient='index')
+print(df)
+```
+Output:
+
+<p align="center">
+  <img src="docs/img/pd_ex1.png" alt="PD_EXAMPLE" style="max-width:60%; height:auto;"/>
+</p>
+
+
+
+
 ## ✨ Features
 
 - Automatic vocabulary extraction  
