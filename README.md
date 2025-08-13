@@ -57,7 +57,7 @@ All stats about 'gengar': {'doc1': 1, 'doc2': 0, 'doc3': 1, 'total': 2, 'doc_fre
 ⚠️ *Note: Example taken from [**Getting Started Guide**](https://github.com/Ariiies/corpy/blob/main/docs/getting_started.md).*
 
 ## 📖 Integration with Pandas
-Para una mejor visualizacion de los datos, la integracion con pandas es muy sencilla:
+For better data visualization, integrating with pandas is very simple:
 ```python
 import pandas as pd
 
@@ -70,8 +70,23 @@ Output:
   <img src="docs/img/pd_ex1.png" alt="PD_EXAMPLE" style="max-width:60%; height:auto;"/>
 </p>
 
+**And to have a better reference in the columns:**
+```python
+new_columns = {
+    'doc1': 'About Pokemom',
+    'doc2': 'Ghotst Type',
+    'doc3': 'Mega Gengar',
+    'total': 'Total',
+    'doc_freq': 'Document Count'
+}
 
-
+new_df= df.rename(columns=new_columns)
+print(new_df)
+```
+Output:
+<p align="center">
+  <img src="docs/img/pd_ex2.png" alt="PD_EXAMPLE2" style="max-width:80%; height:auto;"/>
+</p>
 
 ## ✨ Features
 
